@@ -10,7 +10,8 @@ const calendarChart = (props) => {
         top: 40,
         bottom: 40,
         left: 60,
-        right: 40
+        right: 40,
+        buffer: 25
     };
 
     const colorFill = {
@@ -20,14 +21,14 @@ const calendarChart = (props) => {
     }
 
     const data = props.data;
-    console.log(data);
 
     const innerHeight = height - margin.top -margin.bottom;
     const innerWidth = width - margin.left - margin.right;
 
     const svg = select('.calendar-chart').append('svg')
-        .attr('height', height)
-        .attr('width', width)
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     const xExtent = extent(data, d => d);
@@ -40,7 +41,7 @@ const calendarChart = (props) => {
         .nice()
 
     const yScale = scaleBand()
-        .rangeRound([height, 0], .1)
+        .rangeRound([innerHeight, 0], .1)
         .domain(data.map(d => d.name))
 
     const xAxis = axisBottom()
@@ -53,7 +54,7 @@ const calendarChart = (props) => {
         .tickSize(0)
 
     const g = svg.append('g')
-        .attr('transform', `translate(${margin.left},${margin.top+10})`)
+        //.attr('transform', `translate(${margin.left},${margin.top})`)
         .call(yAxis);
 
         g.append('g')
@@ -64,13 +65,14 @@ const calendarChart = (props) => {
         .data(data)
         .enter()
         .append('rect')
-        .attr('y', d => yScale(d.name))
+        .attr('y', d => yScale(d.name) + margin.buffer)
         .attr('x', 0)
         .attr("width", d => xScale((d.personal.hours + d.work.hours + d.others.hours)))
         .join('g')
             .attr("fill", d => 'blue')
         .attr("stroke", "#fff")
-        .attr("height", 40)
+        .attr("height", 50)
+    
 
 }
 
