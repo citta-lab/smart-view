@@ -22,6 +22,8 @@ const calendarChart = (props) => {
 
     const data = props.data;
 
+    const byDays = true;
+
     const innerHeight = height - margin.top -margin.bottom;
     const innerWidth = width - margin.left - margin.right;
 
@@ -61,6 +63,15 @@ const calendarChart = (props) => {
         .attr('transform', `translate(0,${innerHeight})`)
         .call(xAxis);
 
+    // Naming Axis 
+    g.append("text")   
+        .attr("class", "label")        
+        .attr("transform","translate(" + (innerWidth/2) + " ," + (innerHeight + margin.top + 10) + ")")
+        .style("text-anchor", "middle")
+        .text("In Hours")
+
+
+    // Handling data below
     const bars = g.selectAll('rect')
         .data(data)
         .enter()
@@ -71,7 +82,7 @@ const calendarChart = (props) => {
         .attr('x', 0)
         .attr("width", d => xScale((d.personal.hours + d.work.hours + d.others.hours)))
         .join('g')
-            .attr("fill", d => 'blue')
+            .attr("fill", d => '#E58428')
         .attr("stroke", "#fff")
         .attr("height", 50)
 }

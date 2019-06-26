@@ -8,7 +8,7 @@ class ScheduleManager extends React.Component {
         super(props);
         this.state = {
             response: false,
-            endPoint: 'http://127.0.0.1:4001'
+            endPoint: 'http://144.212.3.4:4001'
         }
     }
 
