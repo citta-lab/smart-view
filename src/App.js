@@ -2,16 +2,13 @@ import React from 'react';
 
 import './App.css';
 import ScheduleManager from '../src/components/calendar/ScheduleManager';
+import Layout from './components/Layout';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <a>
-          Smart View 
-        </a>
-      </header>
-      <ScheduleManager />
+      {/* <ScheduleManager /> */}
+      <Layout />
     </div>
   );
 }

@@ -61,10 +61,12 @@ const calendarChart = (props) => {
         .attr('transform', `translate(0,${innerHeight})`)
         .call(xAxis);
 
-        g.selectAll('rect')
+    const bars = g.selectAll('rect')
         .data(data)
         .enter()
         .append('rect')
+    
+    bars.attr('class','bars')
         .attr('y', d => yScale(d.name) + margin.buffer)
         .attr('x', 0)
         .attr("width", d => xScale((d.personal.hours + d.work.hours + d.others.hours)))
@@ -72,8 +74,6 @@ const calendarChart = (props) => {
             .attr("fill", d => 'blue')
         .attr("stroke", "#fff")
         .attr("height", 50)
-    
-
 }
 
 

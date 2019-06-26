@@ -1,14 +1,26 @@
 import React from 'react';
+import socketIOClient from 'socket.io-client';
 
 import CalendarChart from './CalendarChart';
 
 class ScheduleManager extends React.Component {
     constructor(props){
         super(props);
-        this.state = {}
+        this.state = {
+            response: false,
+            endPoint: 'http://127.0.0.1:4001'
+        }
+    }
+
+    componentDidMount(){
+        const { endPoint } = this.state;
+        const socket = socketIOClient(endPoint);
+        socket.on("FromAPI", data => this.setState({response: data }));
     }
 
     render(){
+        const { response } = this.state;
+        response ? console.log(response) : console.log("NO data")
         const data = [
             {
                 "name": "Mahesh S",
