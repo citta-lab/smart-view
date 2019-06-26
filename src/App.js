@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import CalendarChart from '../src/components/calendar/CalendarChart';
+import ScheduleManager from '../src/components/calendar/ScheduleManager';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
           Smart View 
         </a>
       </header>
-      <CalendarChart />
+      <ScheduleManager />
     </div>
   );
 }
