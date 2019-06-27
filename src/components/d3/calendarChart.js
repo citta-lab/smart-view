@@ -86,8 +86,9 @@ const calendarChart = (rawData, value) => {
         .style("text-anchor", "middle")
     
     // Updating the Axis name
-    const inDays = `In Days ( average: ${averageTime} days )`;
-    const inHours = `In Hours ( average: ${averageTime} hours )`;
+    const averageTimeFloor = Math.floor(averageTime);
+    const inDays = `In Days ( average: ${averageTimeFloor} days )`;
+    const inHours = `In Hours ( average: ${averageTimeFloor} hours )`;
     const inDaysFill = '#E58428';
     const inHoursFill = '#F5B555';
     byDays ? xAxisText.text(inDays).style('fill',inDaysFill) : xAxisText.text(inHours).style('fill',inHoursFill)
