@@ -26,6 +26,14 @@ const calendarChart = (rawData, value) => {
 
     let byDays = (value && value === 'days') ? true : false;
 
+    // Total meeting time in hours
+    const reducer = data.reduce((acc,value) => {
+        return acc + (value.personal.hours + value.work.hours + value.others.hours)
+    },0);
+
+    const numPeople = data.length;
+    const averageTime = byDays ? (reducer / (8*numPeople)) : (reducer / numPeople);
+ 
     const innerHeight = height - margin.top -margin.bottom;
     const innerWidth = width - margin.left - margin.right;
 
@@ -78,7 +86,11 @@ const calendarChart = (rawData, value) => {
         .style("text-anchor", "middle")
     
     // Updating the Axis name
-    byDays ? xAxisText.text('In Days').style('fill','#E58428') : xAxisText.text('In Hours').style('fill','#F5B555')
+    const inDays = `In Days ( average: ${averageTime} days )`;
+    const inHours = `In Hours ( average: ${averageTime} hours )`;
+    const inDaysFill = '#E58428';
+    const inHoursFill = '#F5B555';
+    byDays ? xAxisText.text(inDays).style('fill',inDaysFill) : xAxisText.text(inHours).style('fill',inHoursFill)
     
     // Used animation to load the bars
     const animate = transition().duration(1200);
