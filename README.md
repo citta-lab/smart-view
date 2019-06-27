@@ -1,8 +1,6 @@
 ## Smart View 
 
-The project is aimed to better understand available development time based on outlook scheduled meeting for sprint (two weeks). 
-
-Data needs to be served from the backend service (NodeJS) & we are listening are incominng blog on port 4001 using socket.
+The project is aimed to better understand available development time based on outlook scheduled meeting for sprint (two weeks). Data needs to be served from the backend service (NodeJS) & we are listening are incominng blog on port 4001 using socket.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
