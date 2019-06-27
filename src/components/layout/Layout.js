@@ -18,7 +18,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Layout(props) {
-  console.log(" 2. in layout props here : "+JSON.stringify(props.onClick));
   const classes = useStyles();
   return (
     <div className={classes.root}>

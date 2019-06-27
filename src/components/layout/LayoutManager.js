@@ -9,24 +9,19 @@ class LayoutManager extends React.Component{
             value: 'hours'
         }
 
-        console.log('here')
         this.handleTimeSelection = this.handleTimeSelection.bind(this);
     }
 
     handleTimeSelection (value) {
-        console.log('NEW DSDDSDSFDFDF '+value);
         this.setState({
             value: value
         })
     }
    
-
-    render(){
-        console.log(' 1. value in layout-manager is : '+this.state.value);
-        
+    render(){ 
         return(
            <div>
-                <Layout value={this.state.value} onClick={this.handleTimeSelection} passedFunction={'bla'}/>
+                <Layout value={this.state.value} onClick={this.handleTimeSelection} />
            </div>
         )
     }

@@ -13,7 +13,6 @@ class TimeSelection extends React.Component{
     }
 
     handleChange = (e) => {
-        console.log(e.target.value);
         this.props.onClick(e.target.value);
     }
 
@@ -30,7 +29,7 @@ class TimeSelection extends React.Component{
                     />
                     <FormControlLabel
                             value="days"
-                            control={<Radio color="primary" />}
+                            control={<Radio color="secondary" />}
                             label="By Days"
                             labelPlacement="start"
                     />

@@ -1,8 +1,8 @@
 import { scaleLinear, transition, scaleBand, extent, select, axisBottom, axisLeft, max, stack } from 'd3';
 
 const calendarChart = (rawData, value) => {
-    console.log('calendarChart is reached and data is : '+value);
-
+    
+    // Important to remove otherwise it will add new chart
     select('.calendar-chart > *').remove();
 
     const width = 800;
