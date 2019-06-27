@@ -4,11 +4,11 @@ import calendarChart from '../d3/calendarChart';
 
 class CalendarChart extends React.Component {
     componentDidMount(){
-        calendarChart(this.props);
+        calendarChart(this.props.data, this.props.value);
     }
 
     componentDidUpdate(){
-        calendarChart(this.props);
+        calendarChart(this.props.data, this.props.value);
     }
 
     render(){

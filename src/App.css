@@ -29,7 +29,7 @@
 }
 
 text.label {
-  fill:#968F80;   /* <== Set the fill */
+  /* fill:#968F80;   <== Set the fill */
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
   cursor: move;
   font-size: 1.5em

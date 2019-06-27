@@ -14,8 +14,8 @@ class ScheduleManager extends React.Component {
 
     componentDidMount(){
         const { endPoint } = this.state;
-        const socket = socketIOClient(endPoint);
-        socket.on("FromAPI", data => this.setState({response: data }));
+       // const socket = socketIOClient(endPoint);
+        //socket.on("FromAPI", data => this.setState({response: data }));
     }
 
     render(){
@@ -282,7 +282,7 @@ class ScheduleManager extends React.Component {
                 }
             }
         ];
-        return <CalendarChart data={data} />
+        return <CalendarChart data={data} value={this.props.value}/>
     }
 }
 
