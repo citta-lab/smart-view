@@ -64,5 +64,5 @@ You will also see any lint errors in the console.
 ```
 
 ## Demo 
-![](https://github.com/citta-lab/d3-react/blob/master/examples/barChart/gif/flipBars.gif)
+![](https://github.com/citta-lab/smart-view/blob/master/public/demo.gif)
 
