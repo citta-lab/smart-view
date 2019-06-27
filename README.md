@@ -35,11 +35,7 @@ You will also see any lint errors in the console.
             "events": [
                 {
                     "subject": "doc appointment",
-                    "duration": 3
-                },
-                {
-                    "subject": "gym",
-                    "duration": 1
+                    "duration": 20
                 }
             ]
         },
@@ -48,22 +44,10 @@ You will also see any lint errors in the console.
             "events": [
                 {
                     "subject": "1-1",
-                    "duration": 2
+                    "duration": 8
                 },
                 {
                     "subject": "scrum",
-                    "duration": 1
-                },
-                {
-                    "subject": "code review",
-                    "duration": 2
-                },
-                {
-                    "subject": "design review",
-                    "duration": 2
-                },
-                {
-                    "subject": "book club",
                     "duration": 2
                 }
             ]
@@ -73,11 +57,7 @@ You will also see any lint errors in the console.
             "events": [
                 {
                     "subject": "baasassdsd",
-                    "duration": 3
-                },
-                {
-                    "subject": "gsdsdym",
-                    "duration": 1
+                    "duration": 10
                 }
             ]
         }
